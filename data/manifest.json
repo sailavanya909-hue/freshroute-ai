@@ -1,0 +1,14 @@
+{
+  "file": "data/usda_ppi_annual_raw.csv",
+  "source_url": "https://www.ers.usda.gov/media/6470/annual-percent-changes-in-selected-producer-price-indexes-1974-through-2025.csv?v=53011",
+  "retrieved_date": "2026-10-27",
+  "sha256": "a5d4fa5a82862ac3b6c09eee2ed167ce5965bd0e9ee40ae09a803a5508e92290",
+  "rows": 832,
+  "columns": [
+    "Producer Price Index item",
+    "Year",
+    "Percent change"
+  ],
+  "min_year": 1974,
+  "max_year": 2025
+}

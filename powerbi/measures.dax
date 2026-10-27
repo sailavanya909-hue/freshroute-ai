@@ -1,0 +1,32 @@
+// Create these as separate measures. Scenario table name: scenario_economics.
+Modeled Contribution INR = SUM(scenario_economics[modeled_contribution_inr])
+
+Saleable Kg = SUM(scenario_economics[saleable_kg])
+
+Cost Per Saleable Kg INR =
+DIVIDE(SUM(scenario_economics[total_cost_inr]), [Saleable Kg])
+
+Modeled Contribution Margin =
+DIVIDE([Modeled Contribution INR], SUM(scenario_economics[modeled_revenue_inr]))
+
+Latest Observation = MAX(market_price[price_date])
+
+Observation Age Days =
+IF(NOT ISBLANK([Latest Observation]), DATEDIFF([Latest Observation], TODAY(), DAY()))
+
+// Create disconnected tables FreightChange[Value] and ShrinkChange[Value].
+// Freight change is INR per purchased kg; shrink change is an absolute fraction.
+Scenario Contribution INR =
+VAR FreightDelta = SELECTEDVALUE(FreightChange[Value], 0)
+VAR ShrinkDelta = SELECTEDVALUE(ShrinkChange[Value], 0)
+VAR InvalidRows = COUNTROWS(FILTER(scenario_economics,
+    scenario_economics[spoilage_fraction] + ShrinkDelta < 0 ||
+    scenario_economics[spoilage_fraction] + ShrinkDelta >= 1 ||
+    scenario_economics[freight_inr_kg] + FreightDelta < 0))
+RETURN IF(InvalidRows > 0, BLANK(), SUMX(scenario_economics,
+    scenario_economics[quantity_kg] * (
+      (1 - scenario_economics[spoilage_fraction] - ShrinkDelta) * scenario_economics[sell_inr_kg]
+      - scenario_economics[buy_inr_kg] - scenario_economics[freight_inr_kg] - FreightDelta)))
+
+// Always select one scenario or one mutually exclusive scenario set.
+// These are modeled contributions before fixed costs, taxes and financing.
