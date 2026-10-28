@@ -4,6 +4,8 @@ Fresh-food procurement analytics with a working dashboard, evidence-grounded cha
 
 ## Start the working demo
 
+**On a Mac:** download and extract the project, then double-click `Start FreshRoute.command` and open http://127.0.0.1:8765 . See `MAC_START.md` for the Mac instructions. The browser dashboard is a separate working application; the included Power BI project still requires Windows Desktop validation.
+
 Requires Python 3.10+. The local demo uses only the Python standard library.
 
 ```sh
