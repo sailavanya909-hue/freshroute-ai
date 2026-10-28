@@ -1,0 +1,182 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "lots",
+  "position": {
+    "x": 25,
+    "y": 30,
+    "z": 0,
+    "height": 560,
+    "width": 1390,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DemoInventory"
+                    }
+                  },
+                  "Property": "lot_id"
+                }
+              },
+              "queryRef": "DemoInventory.lot_id",
+              "nativeQueryRef": "lot_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DemoInventory"
+                    }
+                  },
+                  "Property": "warehouse"
+                }
+              },
+              "queryRef": "DemoInventory.warehouse",
+              "nativeQueryRef": "warehouse"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DemoInventory"
+                    }
+                  },
+                  "Property": "quantity_lb"
+                }
+              },
+              "queryRef": "DemoInventory.quantity_lb",
+              "nativeQueryRef": "quantity_lb"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DemoInventory"
+                    }
+                  },
+                  "Property": "remaining_days"
+                }
+              },
+              "queryRef": "DemoInventory.remaining_days",
+              "nativeQueryRef": "remaining_days"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DemoInventory"
+                    }
+                  },
+                  "Property": "data_kind"
+                }
+              },
+              "queryRef": "DemoInventory.data_kind",
+              "nativeQueryRef": "data_kind"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DemoInventory"
+                    }
+                  },
+                  "Property": "Hold Revenue USD"
+                }
+              },
+              "queryRef": "DemoInventory.Hold Revenue USD",
+              "nativeQueryRef": "Hold Revenue USD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DemoInventory"
+                    }
+                  },
+                  "Property": "Markdown Revenue USD"
+                }
+              },
+              "queryRef": "DemoInventory.Markdown Revenue USD",
+              "nativeQueryRef": "Markdown Revenue USD"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'SIMULATED inventory \u00b7 hold assumes 25% unsold, markdown assumes 15% discount and all stock sells'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

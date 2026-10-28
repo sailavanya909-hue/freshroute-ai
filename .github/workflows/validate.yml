@@ -1,0 +1,39 @@
+name: Validate FreshRoute
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ROOT_PASSWORD: ci-ephemeral-admin
+        ports: ["3306:3306"]
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost -pci-ephemeral-admin --silent"
+          --health-interval=5s --health-timeout=5s --health-retries=30
+    env:
+      MYSQL_ROOT_PASSWORD: ci-ephemeral-admin
+      MYSQL_READER_PASSWORD: ci-ephemeral-reader
+      MYSQL_PASSWORD: ci-ephemeral-reader
+      MYSQL_USER: freshroute_reader
+      MYSQL_HOST: 127.0.0.1
+      RUN_MYSQL_TESTS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r requirements.txt
+      - run: python tools/build_data.py
+      - run: python tools/setup_mysql.py
+      - name: Test portable data mode and MySQL constraints
+        run: python -m unittest discover -s tests -v
+      - name: Test dashboard and chatbot against MySQL
+        run: python -m unittest discover -s tests -p test_api.py -v
+        env:
+          FRESHROUTE_DB: mysql
+      - name: Validate Power BI schemas and field bindings
+        run: python tools/validate_powerbi.py

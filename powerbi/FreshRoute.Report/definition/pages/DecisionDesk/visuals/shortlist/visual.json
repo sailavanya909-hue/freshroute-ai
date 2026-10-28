@@ -1,0 +1,140 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "shortlist",
+  "position": {
+    "x": 25,
+    "y": 645,
+    "z": 0,
+    "height": 230,
+    "width": 1390,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quotes"
+                    }
+                  },
+                  "Property": "market"
+                }
+              },
+              "queryRef": "Quotes.market",
+              "nativeQueryRef": "market"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quotes"
+                    }
+                  },
+                  "Property": "Quoted Midpoint USD per lb"
+                }
+              },
+              "queryRef": "Quotes.Quoted Midpoint USD per lb",
+              "nativeQueryRef": "Quoted Midpoint USD per lb"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quotes"
+                    }
+                  },
+                  "Property": "Scenario Delivered USD per lb"
+                }
+              },
+              "queryRef": "Quotes.Scenario Delivered USD per lb",
+              "nativeQueryRef": "Scenario Delivered USD per lb"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Quotes"
+                    }
+                  },
+                  "Property": "Scenario Contribution USD"
+                }
+              },
+              "queryRef": "Quotes.Scenario Contribution USD",
+              "nativeQueryRef": "Scenario Contribution USD"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Same-date, same-size sourcing shortlist \u00b7 select a market to cross-filter'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

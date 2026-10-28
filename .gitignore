@@ -4,3 +4,9 @@ __pycache__/
 *.pyc
 data/customer*/
 *.pbix
+.cache/
+*.sqlite
+*.inspect.ndjson
+.pbi/
+**/.pbi/
+localSettings.json

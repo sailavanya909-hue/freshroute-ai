@@ -1,6 +1,6 @@
 # Power BI implementation specification
 
-This is a design and measure starter; create the report in Power BI Desktop. No rendered report is included.
+The editable FreshRoute.pbip project is now included: four pages, 24 visual definitions and an embedded snapshot model. These original design notes describe broader production ambitions. See README.md and docs/verification.md for the implemented scope. JSON schemas and bindings are validated; native Desktop rendering is unverified.
 
 ## Model
 

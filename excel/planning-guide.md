@@ -1,6 +1,6 @@
 # Advanced Excel planning lab
 
-Implementation guide; no finished workbook is included. Use Microsoft 365 Excel for dynamic arrays. Read MySQL views through Power Query with a read-only database account; install the compatible MySQL connector required by your Excel version. Keep source observations separate from editable assumptions.
+The working FreshRoute_Planner.xlsx workbook is now included. It uses the US USD/lb snapshot and explicit route assumptions. This original guide also documents optional future Excel features, such as Solver and live Power Query imports, that are not embedded in the delivered workbook. Use Microsoft 365 Excel for dynamic arrays. Read MySQL views through Power Query with a read-only database account; install the compatible MySQL connector required by your Excel version. Keep source observations separate from editable assumptions.
 
 ## Workbook structure
 

@@ -1,0 +1,18 @@
+{
+  "snapshot_date": "2026-10-27",
+  "rows": 22,
+  "price_unit": "USD per 50 lb carton",
+  "derived_unit": "USD/lb",
+  "method": "manual transcription, overall range midpoint",
+  "source_report_dates": {
+    "Boston": "2026-10-26",
+    "Chicago": "2026-10-26",
+    "New York": "2026-10-27"
+  },
+  "source_urls": [
+    "https://www.ams.usda.gov/mnreports/bh_fv030.pdf",
+    "https://www.ams.usda.gov/mnreports/hx_fv030.pdf",
+    "https://www.ams.usda.gov/mnreports/nx_fv030.pdf"
+  ],
+  "sha256": "c4cdcd86ef1718e72ed1c5f250b5446f04033dfbf8e2c1ff948ce628a365209c"
+}

@@ -1,0 +1,4 @@
+market,destination,freight_usd_lb,transit_hours,shrink,capacity_lb,data_kind
+Boston,Regional distribution center,0.06,5,0.03,12000,assumption
+Chicago,Regional distribution center,0.19,18,0.06,16000,assumption
+New York,Regional distribution center,0.04,3,0.025,10000,assumption

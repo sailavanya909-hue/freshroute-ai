@@ -1,6 +1,6 @@
 # AI procurement assistant design
 
-Status: design specification; no live language-model integration included.
+Implemented in src/assistant.py and the dashboard chat. The default uses local retrieval-based intent matching and deterministic calculations. An optional OpenAI Responses intent-classification adapter is implemented; it requires server-side OPENAI_API_KEY and OPENAI_MODEL and was not tested with a live paid key. The architectural requirements below describe intended production extensions; this demo does not provide persistent conversation logging or operational write actions.
 
 ## Questions it should answer
 

@@ -1,0 +1,360 @@
+{
+  "name": "FreshRoute",
+  "compatibilityLevel": 1601,
+  "model": {
+    "culture": "en-US",
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "tables": [
+      {
+        "name": "Quotes",
+        "columns": [
+          {
+            "name": "quote_id",
+            "dataType": "string",
+            "sourceColumn": "quote_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "report_date",
+            "dataType": "dateTime",
+            "sourceColumn": "report_date",
+            "summarizeBy": "none",
+            "formatString": "yyyy-MM-dd"
+          },
+          {
+            "name": "market",
+            "dataType": "string",
+            "sourceColumn": "market",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "commodity",
+            "dataType": "string",
+            "sourceColumn": "commodity",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "variety",
+            "dataType": "string",
+            "sourceColumn": "variety",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "origin",
+            "dataType": "string",
+            "sourceColumn": "origin",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "grade",
+            "dataType": "string",
+            "sourceColumn": "grade",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "size_count",
+            "dataType": "int64",
+            "sourceColumn": "size_count",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "low_package",
+            "dataType": "double",
+            "sourceColumn": "low_package",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "high_package",
+            "dataType": "double",
+            "sourceColumn": "high_package",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "midpoint_usd_lb",
+            "dataType": "double",
+            "sourceColumn": "midpoint_usd_lb",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "source_url",
+            "dataType": "string",
+            "sourceColumn": "source_url",
+            "summarizeBy": "none",
+            "dataCategory": "WebUrl"
+          },
+          {
+            "name": "freight_usd_lb",
+            "dataType": "double",
+            "sourceColumn": "freight_usd_lb",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "shrink",
+            "dataType": "double",
+            "sourceColumn": "shrink",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "capacity_lb",
+            "dataType": "double",
+            "sourceColumn": "capacity_lb",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "transit_hours",
+            "dataType": "double",
+            "sourceColumn": "transit_hours",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Quotes",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n Snapshot = #table(type table [quote_id=text, report_date=date, market=text, commodity=text, variety=text, origin=text, grade=text, size_count=Int64.Type, low_package=number, high_package=number, midpoint_usd_lb=number, source_url=text, freight_usd_lb=number, shrink=number, capacity_lb=number, transit_hours=number], {\n{\"bh_fv030_2026-10-26_40\",#date(2026,10,26),\"Boston\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",40,39,42,0.81,\"https://www.ams.usda.gov/mnreports/bh_fv030.pdf\",0.06,0.03,12000,5},\n{\"bh_fv030_2026-10-26_50\",#date(2026,10,26),\"Boston\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",50,39,42,0.81,\"https://www.ams.usda.gov/mnreports/bh_fv030.pdf\",0.06,0.03,12000,5},\n{\"bh_fv030_2026-10-26_60\",#date(2026,10,26),\"Boston\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",60,38,41,0.79,\"https://www.ams.usda.gov/mnreports/bh_fv030.pdf\",0.06,0.03,12000,5},\n{\"bh_fv030_2026-10-26_70\",#date(2026,10,26),\"Boston\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",70,38,41,0.79,\"https://www.ams.usda.gov/mnreports/bh_fv030.pdf\",0.06,0.03,12000,5},\n{\"bh_fv030_2026-10-26_80\",#date(2026,10,26),\"Boston\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",80,33,36,0.69,\"https://www.ams.usda.gov/mnreports/bh_fv030.pdf\",0.06,0.03,12000,5},\n{\"bh_fv030_2026-10-26_90\",#date(2026,10,26),\"Boston\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",90,30,34,0.64,\"https://www.ams.usda.gov/mnreports/bh_fv030.pdf\",0.06,0.03,12000,5},\n{\"bh_fv030_2026-10-26_100\",#date(2026,10,26),\"Boston\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",100,28,31,0.59,\"https://www.ams.usda.gov/mnreports/bh_fv030.pdf\",0.06,0.03,12000,5},\n{\"bh_fv030_2026-10-26_120\",#date(2026,10,26),\"Boston\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",120,28,30,0.58,\"https://www.ams.usda.gov/mnreports/bh_fv030.pdf\",0.06,0.03,12000,5},\n{\"hx_fv030_2026-10-26_40\",#date(2026,10,26),\"Chicago\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",40,32,35,0.67,\"https://www.ams.usda.gov/mnreports/hx_fv030.pdf\",0.19,0.06,16000,18},\n{\"hx_fv030_2026-10-26_50\",#date(2026,10,26),\"Chicago\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",50,32,35,0.67,\"https://www.ams.usda.gov/mnreports/hx_fv030.pdf\",0.19,0.06,16000,18},\n{\"hx_fv030_2026-10-26_60\",#date(2026,10,26),\"Chicago\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",60,30.5,35,0.655,\"https://www.ams.usda.gov/mnreports/hx_fv030.pdf\",0.19,0.06,16000,18},\n{\"hx_fv030_2026-10-26_70\",#date(2026,10,26),\"Chicago\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",70,30.5,35,0.655,\"https://www.ams.usda.gov/mnreports/hx_fv030.pdf\",0.19,0.06,16000,18},\n{\"hx_fv030_2026-10-26_80\",#date(2026,10,26),\"Chicago\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",80,26,30,0.56,\"https://www.ams.usda.gov/mnreports/hx_fv030.pdf\",0.19,0.06,16000,18},\n{\"hx_fv030_2026-10-26_90\",#date(2026,10,26),\"Chicago\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",90,22,26,0.48,\"https://www.ams.usda.gov/mnreports/hx_fv030.pdf\",0.19,0.06,16000,18},\n{\"hx_fv030_2026-10-26_100\",#date(2026,10,26),\"Chicago\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",100,20,23,0.43,\"https://www.ams.usda.gov/mnreports/hx_fv030.pdf\",0.19,0.06,16000,18},\n{\"nx_fv030_2026-10-27_40\",#date(2026,10,27),\"New York\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",40,42,45,0.87,\"https://www.ams.usda.gov/mnreports/nx_fv030.pdf\",0.04,0.025,10000,3},\n{\"nx_fv030_2026-10-27_50\",#date(2026,10,27),\"New York\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",50,42,45,0.87,\"https://www.ams.usda.gov/mnreports/nx_fv030.pdf\",0.04,0.025,10000,3},\n{\"nx_fv030_2026-10-27_60\",#date(2026,10,27),\"New York\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",60,40,42,0.82,\"https://www.ams.usda.gov/mnreports/nx_fv030.pdf\",0.04,0.025,10000,3},\n{\"nx_fv030_2026-10-27_70\",#date(2026,10,27),\"New York\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",70,38,40,0.78,\"https://www.ams.usda.gov/mnreports/nx_fv030.pdf\",0.04,0.025,10000,3},\n{\"nx_fv030_2026-10-27_80\",#date(2026,10,27),\"New York\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",80,34,36,0.7,\"https://www.ams.usda.gov/mnreports/nx_fv030.pdf\",0.04,0.025,10000,3},\n{\"nx_fv030_2026-10-27_90\",#date(2026,10,27),\"New York\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",90,32,32,0.64,\"https://www.ams.usda.gov/mnreports/nx_fv030.pdf\",0.04,0.025,10000,3},\n{\"nx_fv030_2026-10-27_100\",#date(2026,10,27),\"New York\",\"Potatoes\",\"Russet Norkotah\",\"Idaho\",\"U.S. One\",100,28,28,0.56,\"https://www.ams.usda.gov/mnreports/nx_fv030.pdf\",0.04,0.025,10000,3}\n}),\n Source = if UseMySQL then MySQL.Database(MySQLServer, \"freshroute\", [ReturnSingleDatabase=true]){[Schema=\"freshroute\",Item=\"terminal_sourcing_base\"]}[Data] else Snapshot,\n Selected=Table.SelectColumns(Source,{\"quote_id\",\"report_date\",\"market\",\"commodity\",\"variety\",\"origin\",\"grade\",\"size_count\",\"low_package\",\"high_package\",\"midpoint_usd_lb\",\"source_url\",\"freight_usd_lb\",\"shrink\",\"capacity_lb\",\"transit_hours\"})\nin Selected"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Selected Date",
+            "expression": "SELECTEDVALUE(Quotes[report_date], DATE(2026,10,26))"
+          },
+          {
+            "name": "Selected Size",
+            "expression": "SELECTEDVALUE(Quotes[size_count],80)"
+          },
+          {
+            "name": "Purchased lb",
+            "expression": "SELECTEDVALUE(Quantity[Value],10000)"
+          },
+          {
+            "name": "Sell USD per lb",
+            "expression": "SELECTEDVALUE(SellPrice[Value],1.05)",
+            "formatString": "$#,##0.0000"
+          },
+          {
+            "name": "Freight Delta",
+            "expression": "SELECTEDVALUE(FreightDelta[Value],0)"
+          },
+          {
+            "name": "Shrink Delta",
+            "expression": "SELECTEDVALUE(ShrinkDelta[Value],0)"
+          },
+          {
+            "name": "Selection Valid",
+            "expression": "(NOT ISFILTERED(Quotes[report_date]) || HASONEVALUE(Quotes[report_date])) && (NOT ISFILTERED(Quotes[size_count]) || HASONEVALUE(Quotes[size_count]))"
+          },
+          {
+            "name": "Selection Label",
+            "expression": "\"USDA \" & FORMAT([Selected Date],\"yyyy-MM-dd\") & \" | \" & FORMAT([Selected Size],\"0\") & \" count | freight / shrink assumed\""
+          },
+          {
+            "name": "Quoted Midpoint USD per lb",
+            "expression": "VAR D=[Selected Date] VAR S=[Selected Size]\nVAR R=FILTER(Quotes,Quotes[report_date]=D && Quotes[size_count]=S)\nRETURN IF([Selection Valid] && COUNTROWS(R)=1,MAXX(R,Quotes[midpoint_usd_lb]))",
+            "formatString": "$#,##0.0000"
+          },
+          {
+            "name": "Scenario Delivered USD per lb",
+            "expression": "VAR D=[Selected Date] VAR S=[Selected Size] VAR Q=[Purchased lb]\nVAR R=FILTER(Quotes,Quotes[report_date]=D && Quotes[size_count]=S)\nVAR F=MAXX(R,Quotes[freight_usd_lb])+[Freight Delta]\nVAR L=MAXX(R,Quotes[shrink])+[Shrink Delta]\nRETURN IF([Selection Valid] && COUNTROWS(R)=1 && Q<=MAXX(R,Quotes[capacity_lb]) && F>=0 && L>=0 && L<1,\nDIVIDE(MAXX(R,Quotes[midpoint_usd_lb])+F,1-L))",
+            "formatString": "$#,##0.0000"
+          },
+          {
+            "name": "Scenario Contribution USD",
+            "expression": "VAR D=[Selected Date] VAR S=[Selected Size] VAR Q=[Purchased lb]\nVAR R=FILTER(Quotes,Quotes[report_date]=D && Quotes[size_count]=S)\nVAR F=MAXX(R,Quotes[freight_usd_lb])+[Freight Delta]\nVAR L=MAXX(R,Quotes[shrink])+[Shrink Delta]\nRETURN IF(NOT ISBLANK([Scenario Delivered USD per lb]),Q*((1-L)*[Sell USD per lb]-MAXX(R,Quotes[midpoint_usd_lb])-F))",
+            "formatString": "$#,##0.00"
+          },
+          {
+            "name": "Best Delivered USD per lb",
+            "expression": "MINX(VALUES(Quotes[market]),CALCULATE([Scenario Delivered USD per lb]))",
+            "formatString": "$#,##0.0000"
+          },
+          {
+            "name": "Best Market",
+            "expression": "VAR R=FILTER(ADDCOLUMNS(VALUES(Quotes[market]),\"Cost\",CALCULATE([Scenario Delivered USD per lb])),NOT ISBLANK([Cost]))\nRETURN CONCATENATEX(TOPN(1,R,[Cost],ASC,Quotes[market],ASC),Quotes[market],\", \")"
+          },
+          {
+            "name": "Best Contribution USD",
+            "expression": "VAR R=FILTER(ADDCOLUMNS(VALUES(Quotes[market]),\"Cost\",CALCULATE([Scenario Delivered USD per lb])),NOT ISBLANK([Cost]))\nRETURN MAXX(TOPN(1,R,[Cost],ASC,Quotes[market],ASC),CALCULATE([Scenario Contribution USD]))",
+            "formatString": "$#,##0.00"
+          },
+          {
+            "name": "Report Age Days",
+            "expression": "DATEDIFF(MAX(Quotes[report_date]),TODAY(),DAY)"
+          },
+          {
+            "name": "Snapshot Observations",
+            "expression": "COUNTROWS(Quotes)"
+          }
+        ]
+      },
+      {
+        "name": "Quantity",
+        "columns": [
+          {
+            "name": "Value",
+            "dataType": "double",
+            "sourceColumn": "Value",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Quantity",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "#table(type table [Value=number], {\n{5000},\n{10000},\n{15000},\n{20000}\n})"
+            }
+          }
+        ]
+      },
+      {
+        "name": "SellPrice",
+        "columns": [
+          {
+            "name": "Value",
+            "dataType": "double",
+            "sourceColumn": "Value",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "SellPrice",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "#table(type table [Value=number], {\n{0.9},\n{1},\n{1.05},\n{1.1},\n{1.2}\n})"
+            }
+          }
+        ]
+      },
+      {
+        "name": "FreightDelta",
+        "columns": [
+          {
+            "name": "Value",
+            "dataType": "double",
+            "sourceColumn": "Value",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FreightDelta",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "#table(type table [Value=number], {\n{0},\n{0.03},\n{0.06},\n{0.09},\n{0.12},\n{0.15}\n})"
+            }
+          }
+        ]
+      },
+      {
+        "name": "ShrinkDelta",
+        "columns": [
+          {
+            "name": "Value",
+            "dataType": "double",
+            "sourceColumn": "Value",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "ShrinkDelta",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "#table(type table [Value=number], {\n{0},\n{0.03},\n{0.06},\n{0.09},\n{0.12},\n{0.15}\n})"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DemoInventory",
+        "columns": [
+          {
+            "name": "lot_id",
+            "dataType": "string",
+            "sourceColumn": "lot_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "warehouse",
+            "dataType": "string",
+            "sourceColumn": "warehouse",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "quantity_lb",
+            "dataType": "double",
+            "sourceColumn": "quantity_lb",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "remaining_days",
+            "dataType": "int64",
+            "sourceColumn": "remaining_days",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "purchase_usd_lb",
+            "dataType": "double",
+            "sourceColumn": "purchase_usd_lb",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "sell_usd_lb",
+            "dataType": "double",
+            "sourceColumn": "sell_usd_lb",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "data_kind",
+            "dataType": "string",
+            "sourceColumn": "data_kind",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DemoInventory",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "#table(type table [lot_id=text, warehouse=text, quantity_lb=number, remaining_days=Int64.Type, purchase_usd_lb=number, sell_usd_lb=number, data_kind=text], {\n{\"DEMO-A\",\"Regional DC\",3200,2,0.68,0.95,\"simulated\"},\n{\"DEMO-B\",\"Regional DC\",4800,5,0.73,0.99,\"simulated\"},\n{\"DEMO-C\",\"Regional DC\",1800,9,0.7,1.02,\"simulated\"}\n})"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Hold Revenue USD",
+            "expression": "SUMX(DemoInventory,DemoInventory[quantity_lb]*DemoInventory[sell_usd_lb]*0.75)",
+            "formatString": "$#,##0"
+          },
+          {
+            "name": "Markdown Revenue USD",
+            "expression": "SUMX(DemoInventory,DemoInventory[quantity_lb]*DemoInventory[sell_usd_lb]*0.85)",
+            "formatString": "$#,##0"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "UseMySQL",
+        "kind": "m",
+        "expression": "false meta [IsParameterQuery=true, Type=\"Logical\", IsParameterQueryRequired=true]"
+      },
+      {
+        "name": "MySQLServer",
+        "kind": "m",
+        "expression": "\"localhost\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]"
+      }
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+lot_id,warehouse,quantity_lb,remaining_days,purchase_usd_lb,sell_usd_lb,data_kind
+DEMO-A,Regional DC,3200,2,0.68,0.95,simulated
+DEMO-B,Regional DC,4800,5,0.73,0.99,simulated
+DEMO-C,Regional DC,1800,9,0.7,1.02,simulated
