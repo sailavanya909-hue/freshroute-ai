@@ -56,6 +56,8 @@ def visual(page,name,kind,title,x,y,w,h,roles,objects=None):
         visualContainerObjects={'title':[{'properties':{'show':literal(True),'text':literal(title),'fontSize':literal(13)}}],
         'background':[{'properties':{'show':literal(True),'color':{'solid':{'color':literal('#FFFFFF')}},'transparency':literal(0)}}]},drillFilterOtherVisuals=True)
     if objects:conf['objects']=objects
+    if kind=='slicer' and name in ('date','size','market'):
+        conf['syncGroup']={'groupName':'FreshRoute_'+name,'fieldChanges':True,'filterChanges':True}
     save(REPORT/f'definition/pages/{page}/visuals/{name}/visual.json',{
         '$schema':BASE+'definition/visualContainer/2.1.0/schema.json','name':name,
         'position':dict(x=x,y=y,z=0,height=h,width=w,tabOrder=0),'visual':conf})
@@ -145,7 +147,7 @@ RETURN MAXX(TOPN(1,R,[Cost],ASC,Quotes[market],ASC),CALCULATE([Scenario Contribu
     v('Evidence','observations','card','Selected observations in archived snapshot',25,30,650,120,{'Values':[m('Snapshot Observations')]})
     v('Evidence','age','card','Latest report age in days · not a live feed',700,30,715,120,{'Values':[m('Report Age Days')]})
     v('Evidence','sources','tableEx','USDA overall quote ranges · midpoint is derived; USD per 50 lb carton',25,180,1390,690,{'Values':[c(x) for x in ['report_date','market','size_count','low_package','high_package','grade','origin','source_url','quote_id']]})
-    print('Generated Power BI project: 4 pages, 24 visual definitions, embedded snapshot + optional MySQL source')
+    print('Generated Power BI project: 4 pages, 24 visual definitions, synced filters, embedded snapshot + optional MySQL source')
 
 
 if __name__=='__main__':build()

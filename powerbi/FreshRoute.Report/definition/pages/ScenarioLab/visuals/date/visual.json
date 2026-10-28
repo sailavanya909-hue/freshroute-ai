@@ -93,6 +93,11 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "syncGroup": {
+      "groupName": "FreshRoute_date",
+      "fieldChanges": true,
+      "filterChanges": true
+    }
   }
 }

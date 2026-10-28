@@ -93,6 +93,11 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "syncGroup": {
+      "groupName": "FreshRoute_market",
+      "fieldChanges": true,
+      "filterChanges": true
+    }
   }
 }

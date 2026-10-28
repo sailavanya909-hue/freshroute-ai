@@ -68,7 +68,7 @@ def build():
 
 def write_csv(path, records):
     with path.open('w', newline='') as target:
-        writer=csv.DictWriter(target, fieldnames=list(records[0]))
+        writer=csv.DictWriter(target, fieldnames=list(records[0]), lineterminator='\n')
         writer.writeheader()
         writer.writerows(records)
 
